@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="bootstrap/css/bootstrap.css">
     <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+    <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
     <title>Document</title>
 </head>
 <body>
@@ -15,18 +16,84 @@
 
     </nav>
     <div class="container">
+        <div class="logo">
+            <img src="logo.png" height="200px" width="400px">
+        </div>
         <div class="description">
             <h2>Project Name</h2>
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna.</p>
         </div>
         <div class="feed">
             <div id="map">
-                <!-- Best API -->
+                <div style="padding: 2% 2%;" class="content">
+                    <div id="mapholder"></div>
+                    <script src="http://maps.google.com/maps/api/js?sensor=false" style="margin-bottom: 2%;"></script>
+                    <form action="#">
+                      <div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable">
+                        <label class="mdl-button mdl-js-button mdl-button--icon" for="sample6">
+                          <i class="material-icons">search</i>
+                        </label>
+                        <div class="mdl-textfield__expandable-holder">
+                          <input class="mdl-textfield__input" type="text" id="sample6">
+                          <label class="mdl-textfield__label" for="sample-expandable">Expandable Input</label>
+                        </div>
+                      </div>
+                    </form>
+                    <script>
+                      var getLocation = ()=> (navigator.geolocation)?navigator.geolocation.getCurrentPosition(showPosition):alert("Geolocalização não suportada.");
+                      var showPosition = function(position){
+                        latlon=new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
+                        mapholder=document.getElementById('mapholder');
+                        mapholder.style.height='500px';
+                        mapholder.style.width='50%';
+                       
+                        var myOptions={
+                          center:latlon,zoom:17,
+                          mapTypeId:google.maps.MapTypeId.ROADMAP,
+                          mapTypeControl:false,
+                          navigationControlOptions:{style:google.maps.NavigationControlStyle.SMALL}
+                        };
+                        var map=new google.maps.Map(document.getElementById("mapholder"),myOptions);
+                        var marker=new google.maps.Marker({position:latlon,map:map,title:"Você está Aqui!"});
+                      }
+            
+                      getLocation();
+                      showPosition(position); //trocar x.innerHTML por var latitude e var longitude;
+                    </script>
+                </div>
             </div>
             <div class="optionsReport">
                 <!-- YOYO-->
             </div>
-        </div>
+            <div class="news">
+                    <div class="list-group">
+                            <a href="#" class="list-group-item list-group-item-action flex-column align-items-start ">
+                              <div class="d-flex w-100 justify-content-between">
+                                <h5 class="mb-1">Assédio no BGV</h5>
+                                <small>3 days ago</small>
+                              </div>
+                              <p class="mb-1">Caso de assédio é relatado por morador do bairro Getulio Vargas.</p>
+                              <small>Rio Grande, RS.</small>
+                            </a>
+                            <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
+                              <div class="d-flex w-100 justify-content-between">
+                                <h5 class="mb-1">Violencia Sexual em Campinas</h5>
+                                <small class="text-muted">2 weeks ago</small>
+                              </div>
+                              <p class="mb-1">Mulher é vitima de violencia sexual em plena luz do dia no bairro mazembe.</p>
+                              <small class="text-muted">Campinas, SP.</small>
+                            </a>
+                            <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
+                              <div class="d-flex w-100 justify-content-between">
+                                <h5 class="mb-1">Assalto a mão armada</h5>
+                                <small class="text-muted">1 month ago</small>
+                              </div>
+                              <p class="mb-1">Enquanto esperava os filhos sairem da escola, mulher é vitima de assalto a mão armada dentro de seu próprio veiculo.</p>
+                              <small class="text-muted">Colégio Marista, RG.</small>
+                            </a>
+                          </div>
+            </div>
+        <button type="button" class="btn btn-primary btn-lg btn-block">Reportar</button>
     </div>
     <footer class="">
         <div class="left">
@@ -88,27 +155,25 @@
                 </div>
             </div>
         </div>
-        <div class="right">
+        <div class="sugestion">
             <h1>Sugestões</h1>
             <form>
-                <div>
-                    <label for="">Nome:</label>
-                    <input type="text" name="" id="">
+                <div class="form-group">
+                    <label for="exampleFormControlTextarea1">Name:</label>
+                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="1"></textarea>
                 </div>
-                <div>
-                    <label for="">Email:</label>
-                    <small id="emailHelp" class="form-text text-muted">Nós nunca vamos compartilhar seu e-mail com ninguém.</small>
-                    <input type="email" name="" id="">
+                <div class="form-group">
+                  <label for="exampleFormControlInput1">Email address:</label>
+                  <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
                 </div>
-                <div>
-                    <label for="">Título:</label>
-                    <input type="text" name="" id="">
+                <div class="form-group">
+                    <label for="exampleFormControlTextarea1">Title:</label>
+                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="1"></textarea>
                 </div>
-                <div>
-                    <textarea name="" id="" cols="30" rows="10"></textarea>
+                <div class="form-group">
+                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="5"></textarea>
                 </div>
-                <button type="submit">Enviar</button>
-            </form>
+              </form>
         </div>
         <div>
             <h6>Copyright &copy;</h6>
