@@ -1,185 +1,198 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="bootstrap/css/bootstrap.css">
-    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
-    <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
-    <title>Document</title>
-</head>
-<body>
-    <!-- Como teria o lance do wrapper e tudo mais na lateral
-    deixei vazio por não ter definido a extrutura dos menus em geral -->
-    <nav>
-
-    </nav>
-    <div class="container">
-        <div class="logo">
-            <img src="logo.png" height="200px" width="400px">
-        </div>
-        <div class="description">
-            <h2>Project Name</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna.</p>
-        </div>
-        <div class="feed">
-            <div id="map">
-                <div style="padding: 2% 2%;" class="content">
-                    <div id="mapholder"></div>
-                    <script src="http://maps.google.com/maps/api/js?sensor=false" style="margin-bottom: 2%;"></script>
-                    <form action="#">
-                      <div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable">
-                        <label class="mdl-button mdl-js-button mdl-button--icon" for="sample6">
-                          <i class="material-icons">search</i>
-                        </label>
-                        <div class="mdl-textfield__expandable-holder">
-                          <input class="mdl-textfield__input" type="text" id="sample6">
-                          <label class="mdl-textfield__label" for="sample-expandable">Expandable Input</label>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <link rel="stylesheet" href="bootstrap/css/bootstrap.css">
+        <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+        <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+        <title>Document</title>
+    </head>
+    <body>
+        <!-- Como teria o lance do wrapper e tudo mais na lateral
+        deixei vazio por não ter definido a extrutura dos menus em geral -->
+        <nav>
+            <div class="pos-f-t">
+                <div class="collapse" id="navbarToggleExternalContent">
+                    <a href="index.html">Página Inicial</a>
+                    <a href="./pages/about.html">Sobre nós</a>
+                    <a href="index.html">Reportar Caso</a>
+                    <a href="index.html">Feed</a>
+                    <a href="index.html">Estatisticas</a>
+                </div>
+                <nav class="navbar navbar-dark bg-dark">
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                    </button>
+                </nav>
+                </div>
+        </nav>
+        <div class="container">
+            <div class="logo">
+                <img src="logo.png" height="200px" width="400px">
+            </div>
+            <div class="description">
+                <a href="./pages/about.html">Project Name</a>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna.</p>
+            </div>
+            <div class="feed">
+                <div id="map">
+                    <div style="padding: 2% 2%;" class="content">
+                        <div id="mapholder"></div>
+                        <script src="http://maps.google.com/maps/api/js?sensor=false" style="margin-bottom: 2%;"></script>
+                        <form action="#">
+                        <div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable">
+                            <label class="mdl-button mdl-js-button mdl-button--icon" for="sample6">
+                            <i class="material-icons">search</i>
+                            </label>
+                            <div class="mdl-textfield__expandable-holder">
+                            <input class="mdl-textfield__input" type="text" id="sample6">
+                            <label class="mdl-textfield__label" for="sample-expandable">Expandable Input</label>
+                            </div>
                         </div>
-                      </div>
-                    </form>
-                    <script>
-                      var getLocation = ()=> (navigator.geolocation)?navigator.geolocation.getCurrentPosition(showPosition):alert("Geolocalização não suportada.");
-                      var showPosition = function(position){
-                        latlon=new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
-                        mapholder=document.getElementById('mapholder');
-                        mapholder.style.height='500px';
-                        mapholder.style.width='50%';
-                       
-                        var myOptions={
-                          center:latlon,zoom:17,
-                          mapTypeId:google.maps.MapTypeId.ROADMAP,
-                          mapTypeControl:false,
-                          navigationControlOptions:{style:google.maps.NavigationControlStyle.SMALL}
-                        };
-                        var map=new google.maps.Map(document.getElementById("mapholder"),myOptions);
-                        var marker=new google.maps.Marker({position:latlon,map:map,title:"Você está Aqui!"});
-                      }
-            
-                      getLocation();
-                      showPosition(position); //trocar x.innerHTML por var latitude e var longitude;
-                    </script>
+                        </form>
+                        <script>
+                        var getLocation = ()=> (navigator.geolocation)?navigator.geolocation.getCurrentPosition(showPosition):alert("Geolocalização não suportada.");
+                        var showPosition = function(position){
+                            latlon=new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
+                            mapholder=document.getElementById('mapholder');
+                            mapholder.style.height='500px';
+                            mapholder.style.width='50%';
+
+                            var myOptions={
+                            center:latlon,zoom:17,
+                            mapTypeId:google.maps.MapTypeId.ROADMAP,
+                            mapTypeControl:false,
+                            navigationControlOptions:{style:google.maps.NavigationControlStyle.SMALL}
+                            };
+                            var map=new google.maps.Map(document.getElementById("mapholder"),myOptions);
+                            var marker=new google.maps.Marker({position:latlon,map:map,title:"Você está Aqui!"});
+                        }
+
+                        getLocation();
+                        showPosition(position);
+                        //trocar x.innerHTML por var latitude e var longitude;
+                        </script>
+                    </div>
                 </div>
-            </div>
-            <div class="optionsReport">
-                <!-- YOYO-->
-            </div>
-            <div class="news">
+                <div class="optionsReport">
+                    <!-- YOYO-->
+                </div>
+                <div class="news">
                     <div class="list-group">
-                            <a href="#" class="list-group-item list-group-item-action flex-column align-items-start ">
-                              <div class="d-flex w-100 justify-content-between">
-                                <h5 class="mb-1">Assédio no BGV</h5>
-                                <small>3 days ago</small>
-                              </div>
-                              <p class="mb-1">Caso de assédio é relatado por morador do bairro Getulio Vargas.</p>
-                              <small>Rio Grande, RS.</small>
-                            </a>
-                            <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
-                              <div class="d-flex w-100 justify-content-between">
-                                <h5 class="mb-1">Violencia Sexual em Campinas</h5>
-                                <small class="text-muted">2 weeks ago</small>
-                              </div>
-                              <p class="mb-1">Mulher é vitima de violencia sexual em plena luz do dia no bairro mazembe.</p>
-                              <small class="text-muted">Campinas, SP.</small>
-                            </a>
-                            <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
-                              <div class="d-flex w-100 justify-content-between">
-                                <h5 class="mb-1">Assalto a mão armada</h5>
-                                <small class="text-muted">1 month ago</small>
-                              </div>
-                              <p class="mb-1">Enquanto esperava os filhos sairem da escola, mulher é vitima de assalto a mão armada dentro de seu próprio veiculo.</p>
-                              <small class="text-muted">Colégio Marista, RG.</small>
-                            </a>
-                          </div>
+                        <a href="#" class="list-group-item list-group-item-action flex-column align-items-start ">
+                        <div class="d-flex w-100 justify-content-between">
+                            <h5 class="mb-1">Assédio no BGV</h5>
+                            <small>3 days ago</small>
+                        </div>
+                        <p class="mb-1">Caso de assédio é relatado por morador do bairro Getulio Vargas.</p>
+                        <small>Rio Grande, RS.</small>
+                        </a>
+                        <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
+                        <div class="d-flex w-100 justify-content-between">
+                            <h5 class="mb-1">Violencia Sexual em Campinas</h5>
+                            <small class="text-muted">2 weeks ago</small>
+                        </div>
+                        <p class="mb-1">Mulher é vitima de violencia sexual em plena luz do dia no bairro mazembe.</p>
+                        <small class="text-muted">Campinas, SP.</small>
+                        </a>
+                        <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
+                        <div class="d-flex w-100 justify-content-between">
+                            <h5 class="mb-1">Assalto a mão armada</h5>
+                            <small class="text-muted">1 month ago</small>
+                        </div>
+                        <p class="mb-1">Enquanto esperava os filhos sairem da escola, mulher é vitima de assalto a mão armada dentro de seu próprio veiculo.</p>
+                        <small class="text-muted">Colégio Marista, RG.</small>
+                        </a>
+                    </div>
+                </div>
+                <button type="button" class="btn btn-primary btn-lg btn-block">Reportar</button>
             </div>
-        <button type="button" class="btn btn-primary btn-lg btn-block">Reportar</button>
-    </div>
-    <footer class="">
-        <div class="left">
-            <div class="collaborator">
-                <div class="icon">
-                    <img src="" alt="" srcset="">
-                    <h5>Name</h5>
-                </div>
-                <div class="aboutMe">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
-                    aliqua.</p>
-                </div>
-            </div>
-            <div class="collaborator">
-                <div class="icon">
-                    <img src="" alt="" srcset="">
-                    <h5>Name</h5>
-                </div>
-                <div class="aboutMe">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                </div>
-            </div>
-            <div class="collaborator">
-                <div class="icon">
-                    <img src="" alt="" srcset="">
-                    <h5>Name</h5>
-                </div>
-                <div class="aboutMe">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore
-                        magna
+        </div>
+        <footer class="">
+            <div class="left">
+                <div class="collaborator">
+                    <div class="icon">
+                        <img src="#" alt="" srcset="">
+                        <h5>Name</h5>
+                    </div>
+                    <div class="aboutMe">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
                         aliqua.</p>
+                    </div>
+                </div>
+                <div class="collaborator">
+                    <div class="icon">
+                        <img src="#" alt="" srcset="">
+                        <h5>Name</h5>
+                    </div>
+                    <div class="aboutMe">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                    </div>
+                </div>
+                <div class="collaborator">
+                    <div class="icon">
+                        <img src="#" alt="" srcset="">
+                        <h5>Name</h5>
+                    </div>
+                    <div class="aboutMe">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                    </div>
+                </div>
+                <div class="collaborator">
+                    <div class="icon">
+                        <img src="#" alt="" srcset="">
+                        <h5>Name</h5>
+                    </div>
+                    <div class="aboutMe">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                    </div>
+                </div>
+                <div class="collaborator">
+                    <div class="icon">
+                        <img src="#" alt="" srcset="">
+                        <h5>Name</h5>
+                    </div>
+                    <div class="aboutMe">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                    </div>
+                </div>
+                <div class="collaborator">
+                    <div class="icon">
+                        <img src="#" alt="" srcset="">
+                        <h5>Name</h5>
+                    </div>
+                    <div class="aboutMe">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                    </div>
                 </div>
             </div>
-            <div class="collaborator">
-                <div class="icon">
-                    <img src="" alt="" srcset="">
-                    <h5>Name</h5>
-                </div>
-                <div class="aboutMe">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                </div>
+            <div class="sugestion">
+                <h1>Sugestões</h1>
+                <form>
+                    <div class="form-group">
+                        <label for="exampleFormControlTextarea1">Name:</label>
+                        <textarea class="form-control" id="exampleFormControlTextareaName" rows="1"></textarea>
+                    </div>
+                    <div class="form-group">
+                    <label for="exampleFormControlInput1">Email address:</label>
+                    <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleFormControlTextarea1">Title:</label>
+                        <textarea class="form-control" id="exampleFormControlTextareaTitle" rows="1"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <textarea class="form-control" id="exampleFormControlTextareaSugestion" rows="5"></textarea>
+                    </div>
+                </form>
             </div>
-            <div class="collaborator">
-                <div class="icon">
-                    <img src="" alt="" srcset="">
-                    <h5>Name</h5>
-                </div>
-                <div class="aboutMe">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                </div>
+            <div>
+                <h6>Copyright &copy;</h6>
             </div>
-            <div class="collaborator">
-                <div class="icon">
-                    <img src="" alt="" srcset="">
-                    <h5>Name</h5>
-                </div>
-                <div class="aboutMe">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                </div>
-            </div>
-        </div>
-        <div class="sugestion">
-            <h1>Sugestões</h1>
-            <form>
-                <div class="form-group">
-                    <label for="exampleFormControlTextarea1">Name:</label>
-                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="1"></textarea>
-                </div>
-                <div class="form-group">
-                  <label for="exampleFormControlInput1">Email address:</label>
-                  <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
-                </div>
-                <div class="form-group">
-                    <label for="exampleFormControlTextarea1">Title:</label>
-                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="1"></textarea>
-                </div>
-                <div class="form-group">
-                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="5"></textarea>
-                </div>
-              </form>
-        </div>
-        <div>
-            <h6>Copyright &copy;</h6>
-        </div>
-    </footer>
-    <script src="bootstrap/js/bootstrap.bundle.js"></script>
-    <script src="bootstrap/js/bootstrap.bundle.min.js"></script>
-</body>
+        </footer>
+        <script src="bootstrap/js/bootstrap.bundle.js"></script>
+        <script src="bootstrap/js/bootstrap.bundle.min.js"></script>
+    </body>
 </html>
