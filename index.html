@@ -10,6 +10,7 @@
         <!-- Font Awesome -->
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU"
         crossorigin="anonymous">
+        <link rel="stylesheet" href="css/style.css">
         <link rel="stylesheet" href="css/colors.css">
         <link rel="stylesheet" href="css/effects.css">
         <title>Document</title>
@@ -53,12 +54,8 @@
                             <script src="http://maps.google.com/maps/api/js?sensor=false" style="margin-bottom: 2%;"></script>
                             <form action="#">
                             <div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable">
-                                <label class="mdl-button mdl-js-button mdl-button--icon" for="sample6">
-                                <i class="material-icons">search</i>
-                                </label>
+                                
                                 <div class="mdl-textfield__expandable-holder">
-                                <input class="mdl-textfield__input" type="text" id="sample6">
-                                <label class="mdl-textfield__label" for="sample-expandable">Expandable Input</label>
                                 </div>
                             </div>
                             </form>
@@ -89,7 +86,7 @@
                     <div class="optionsReport w-50 mt-5">
                         <h3>Tipo de violencia</h3>
                         <hr>
-                        <ul class="list-group w-100 d-flex">
+                        <ul class="list-group w-150 d-flex">
                             <li class="list-group-item itemClick">Loren Ipsun</li>
                             <li class="list-group-item itemClick">Loren Ipsun</li>
                             <li class="list-group-item itemClick">Loren Ipsun</li>
@@ -100,9 +97,17 @@
                 </div>
             </div>
         </div>
-        <footer class="d-flex flex-row container-fluid">
-            <div class="collaborators w-50">
-                <div class="collaborator d-flex flex-row">
+        
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+            crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+            crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+            crossorigin="anonymous"></script>
+    </body>
+        <footer class="d-flex container-fluid">
+            <div class="collaborators d-flex flex-column w-50">
+                <div class="collaborator ">
                     <div class="icon d-flex flex-column align-content-center">
                         <div class="person"></div>
                         <h5>Name</h5>
@@ -158,7 +163,7 @@
                     </div>
                 </div>
             </div>
-            <div class="sugestion">
+            <div class="sugestion w-50">
                 <h1>Sugestões</h1>
                 <form>
                     <div class="form-group">
@@ -178,15 +183,8 @@
                     </div>
                 </form>
             </div>
-            <div>
-                <h6>Copyright &copy;</h6>
-            </div>
         </footer>
-        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-            crossorigin="anonymous"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
-            crossorigin="anonymous"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
-            crossorigin="anonymous"></script>
-    </body>
+        <div class="navbar bg-dark">
+            <h1>Copyright</h1>
+        </div>
 </html>
